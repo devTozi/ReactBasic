@@ -43,7 +43,6 @@ const IterationComponentQ2 = () => {
             );
         setInfo(result);
         setSerch('');    
-        console.log(info)
     }
 
     const enter = (e) => {

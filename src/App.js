@@ -1,23 +1,34 @@
-import HookEffect from "./hook/HookEffect";
+import { Fragment } from "react"
+// CSS 파일 링크
+import './css/App.css';
+
+// CSS 모듈 파일 링크
+import styled from './css/App.module.css';
 
 const App = () => {
 
-    /* 
-        교재 p.233
-        1. 필수 훅
-        useState()
-        컴포넌트에서 상태값을 제어하는 가장 기본이 되는 hook
-
-        useEffect()
-        컴포넌트의 라이프사이클(생명주기)를 다룬다.
-        mount, mount 이후, state 변경 시, unmount 이전에
-        특정 작업을 수행 할 수 있다.
-    */
+    // 직접 스타일링에서 - 은 카멜표기법으로 변경
+    const myStyle = {
+        color : '#fff',
+        textAlign : 'center',
+    }
 
     return(
-        <>
-            <HookEffect/>
-        </>
+        <Fragment>
+            <header style={{backgroundColor : 'black'}} className='app_header'>
+                <p style={myStyle}>헤더(직접 스타일링)</p>
+            </header>
+            <article className="app_article">
+                CSS 파일로 디자인하기
+            </article>
+            <section className={styled.app_wrap}>
+                <div className={styled.app_item}>
+                    <p>CSS디자인</p>
+                    <input type="text" className="input_control"/>
+                    <input type="password" className="input_control"/>
+                </div>
+            </section>
+        </Fragment>
     )
 }
 
